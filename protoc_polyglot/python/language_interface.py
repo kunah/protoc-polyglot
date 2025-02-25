@@ -20,4 +20,5 @@ class LanguageInterface(CommonInterface):
         {" ".join(files)}"""
 
         print(com)
-        os.system(com)
+        if os.system(com) != 0:
+            raise RuntimeError(f"Error compiling {com}")

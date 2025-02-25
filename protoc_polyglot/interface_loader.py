@@ -3,8 +3,8 @@ import os, sys, importlib
 from os.path import abspath, dirname
 from enum import Enum
 
-from settings import Settings
-from common_interface import CommonInterface
+from protoc_polyglot.settings import Settings
+from protoc_polyglot.common_interface import CommonInterface
 
 class RunMode(Enum):
     DOCKER = 1
