@@ -2,7 +2,7 @@
 import os, sys
 
 sys.path.insert(0, os.path.abspath('..'))
-from protoc_polyglot.cli import *
+from protoc_polyglot.common_interface import *
 
 
 class LanguageInterface(CommonInterface):
