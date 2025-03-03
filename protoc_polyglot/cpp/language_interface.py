@@ -18,7 +18,7 @@ class LanguageInterface(CommonInterface):
         os.makedirs(dir_src, exist_ok=True)
         os.makedirs(dir_include, exist_ok=True)
 
-        com = f'protoc -I {dir_protos} \
+        com = f'{self.settings.protoc_binary} -I {dir_protos} \
         --plugin=protoc-gen-grpc={self.get_plugin_executable_path()} \
         --grpc_out={dir_src} \
         --cpp_out={dir_src} \

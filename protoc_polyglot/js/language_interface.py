@@ -11,7 +11,7 @@ class LanguageInterface(CommonInterface):
         shutil.rmtree(dir_output, ignore_errors=True)
         os.makedirs(dir_output, exist_ok=False)
         
-        com = f"""protoc \
+        com = f"""{self.settings.protoc_binary} \
         -I={dir_protos} \
         {" ".join(files)} \
         --js_out=import_style=commonjs:{dir_output} \

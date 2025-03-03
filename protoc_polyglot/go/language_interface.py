@@ -11,7 +11,7 @@ class LanguageInterface(CommonInterface):
         shutil.rmtree(dir_output, ignore_errors=True)
         os.makedirs(dir_output, exist_ok=False)
 
-        com = f"""/usr/bin/protoc \
+        com = f"""{self.settings.protoc_binary} \
         -I {dir_protos} \
         --plugin=protoc-gen-go={self.get_plugin_executable_path()} \
         --go_out={dir_output} \
